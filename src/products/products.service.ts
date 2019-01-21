@@ -18,15 +18,12 @@ export class ProductsService {
   }
 
   async create(dto: ProductCreateDto) {
-    const productInfo = new ProductInfo()
-    Object.assign(productInfo, dto)
-    return await this.productInfoRepository.save(productInfo)
+    return await this.productInfoRepository.save(dto.assignTo(new ProductInfo()))
   }
 
   async update(id: number, dto: ProductUpdateDto) {
     let productInfo = await this.productInfoRepository.findOneOrFail(id)
-    Object.assign(productInfo, dto)
-    return await this.productInfoRepository.save(productInfo)
+    return await this.productInfoRepository.save(dto.assignTo(productInfo))
   }
 
   async delete(id: number) {
