@@ -1,0 +1,24 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "order-service",
+  "database": "order-service",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "src/common/entities/**/*.ts"
+  ],
+  "migrations": [
+    "src/common/migration/**/*.ts"
+  ],
+  "subscribers": [
+    "src/common/subscriber/**/*.ts"
+  ],
+  "cli": {
+    "entitiesDir": "src/common/entities",
+    "migrationsDir": "src/common/migration",
+    "subscribersDir": "src/common/subscriber"
+  }
+}
