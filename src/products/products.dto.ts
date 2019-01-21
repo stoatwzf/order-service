@@ -1,6 +1,7 @@
 import { IsDefined, IsString, IsInt } from 'class-validator';
+import { Dto } from 'src/common/types/dto';
 
-export class ProductCreateDto {
+export class ProductCreateDto extends Dto {
   @IsDefined() @IsString() readonly name: string // 商品名称
   @IsDefined() @IsInt() readonly price: number // 单价
   @IsInt() readonly stock: number // 库存
@@ -9,7 +10,7 @@ export class ProductCreateDto {
   @IsString() readonly icon: string // 小图
 }
 
-export class ProductUpdateDto {
+export class ProductUpdateDto extends Dto {
   @IsString() public readonly name: string // 商品名称
   @IsInt() public readonly price: number // 单价
   @IsInt() public readonly stock: number // 库存
@@ -18,7 +19,7 @@ export class ProductUpdateDto {
   @IsString() public readonly icon: string // 小图
 }
 
-export class ProductStockDto {
+export class ProductStockDto extends Dto {
   @IsInt() readonly id: number
   @IsInt() readonly quantity: number
 }
