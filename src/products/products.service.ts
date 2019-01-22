@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import ProductInfo from 'src/common/entities/ProductInfo';
 import { Repository } from 'typeorm';
 import { ProductCreateDto, ProductUpdateDto } from './products.dto';
+import { ProductInfoStatesEnum } from 'src/common/config/enumDef';
 
 @Injectable()
 export class ProductsService {
@@ -28,7 +29,7 @@ export class ProductsService {
 
   async delete(id: number) {
     let productInfo = await this.productInfoRepository.findOneOrFail(id)
-    productInfo.deleted = true
+    productInfo.status = ProductInfoStatesEnum.deleted
     return await this.productInfoRepository.save(productInfo)
   }
 

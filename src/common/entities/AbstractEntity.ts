@@ -9,17 +9,14 @@ export abstract class AbstractEntity extends BaseEntity {
   }
 
   @PrimaryGeneratedColumn('increment')
-  id!: number
-
-  @Column({ default: false })
-  deleted!: boolean
+  id: number
 
   @CreateDateColumn()
-  created_at!: Date
+  created_at: Date
 
   @UpdateDateColumn()
-  updated_at!: Date
+  updated_at: Date
 
   @VersionColumn()
-  _v!: number
+  _v: number
 }
