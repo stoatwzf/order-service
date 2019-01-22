@@ -19,7 +19,6 @@ export class ProductsController {
 
   @Post()
   createProduct(@Body() dto: ProductCreateDto) {
-    console.log(dto)
     return this.productsService.create(dto)
   }
 

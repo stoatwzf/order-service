@@ -1,6 +1,6 @@
 import {Entity, Column, OneToMany} from "typeorm";
 import { AbstractEntity } from "./AbstractEntity";
-import { OrderStatusEnum } from '../config/enumDef'
+import { OrderStatusEnum } from '../config/enum.config'
 import OrderDetail from './OrderDetail'
 
 @Entity()

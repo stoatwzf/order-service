@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import ProductInfo from 'src/common/entities/ProductInfo';
 import { Repository } from 'typeorm';
 import { ProductCreateDto, ProductUpdateDto } from './products.dto';
-import { ProductInfoStatesEnum } from 'src/common/config/enumDef';
+import { ProductInfoStatesEnum } from 'src/common/config/enum.config';
 
 @Injectable()
 export class ProductsService {
