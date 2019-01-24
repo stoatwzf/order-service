@@ -1,5 +1,5 @@
 import { IsDefined, IsString, IsInt } from 'class-validator';
-import { Dto } from 'src/common/types/dto';
+import { Dto } from '../common/types/dto';
 
 export class ProductCreateDto extends Dto {
   @IsDefined() @IsString() readonly name: string // 商品名称

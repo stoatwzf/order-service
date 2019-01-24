@@ -8,27 +8,27 @@ export default class OrderDetail extends AbstractEntity {
 
   // 订单id
   @ManyToOne(type => OrderMaster, order => order.details)
-  orderMaster!: OrderMaster
+  orderMaster: OrderMaster
 
   // 商品id
   @OneToOne(type => ProductInfo)
   @JoinColumn()
-  product!: ProductInfo
+  product: ProductInfo
 
   // 商品名称
   @Column('varchar', { length: 64 })
-  productName!: string
+  productName: string
 
   // 商品单价
   @Column('int')
-  productPrice!: number
+  productPrice: number
 
   // 商品数量
   @Column('int')
-  productQuantity!: number
+  productQuantity: number
   
   // 商品小图
   @Column('varchar')
-  productIcon!: string
+  productIcon: string
 
 }
