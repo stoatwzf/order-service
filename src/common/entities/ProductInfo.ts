@@ -24,8 +24,16 @@ export default class ProductInfo extends AbstractEntity {
   @Column('varchar', { length: 2048, nullable: true })
   description: string
 
+  // 标签
+  @Column('simple-array', { nullable: true })
+  labels: string[]
+
   // 小图
-  @Column('varchar', { length: 512, nullable: true })
-  icon: string
+  @Column('simple-array', { nullable: true })
+  icons: string[]
+
+  // 详情页
+  @Column('text', { nullable: true })
+  detail: string
 
 }
